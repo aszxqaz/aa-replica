@@ -36,16 +36,14 @@ export class LoaderScene extends Container implements IScene {
 
     private loaded(): void {
         // sound.play("forklift-effect");
-        SceneManager.changeScene(
-            new MenuScene(SceneManager.width, SceneManager.height)
-        );
+        SceneManager.changeScene(new MenuScene());
     }
 
-    update(framesPassed: number): void {
+    update(): void {
         //...
     }
 
-    resize(parentWidth: number, parentHeight: number): void {
+    resize(): void {
         //...
     }
 }

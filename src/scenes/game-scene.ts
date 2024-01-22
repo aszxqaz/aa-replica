@@ -78,7 +78,7 @@ export class GameScene extends PIXI.Container implements IScene {
         }
     }
 
-    resize(parentWidth: number, parentHeight: number): void {
+    resize(): void {
         //
     }
 }

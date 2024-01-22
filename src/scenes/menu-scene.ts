@@ -4,7 +4,7 @@ import { MenuButton } from "../components/menu-button";
 import { GameScene } from "./game-scene";
 
 export class MenuScene extends PIXI.Container implements IScene {
-    constructor(parentWidth: number, parentHeight: number) {
+    constructor() {
         super();
         const playButton = new MenuButton("Play");
         playButton.on("pointerdown", () => {
@@ -19,9 +19,9 @@ export class MenuScene extends PIXI.Container implements IScene {
         this.addChild(playButton);
     }
 
-    update(dt: number): void {}
+    update(): void {}
 
-    resize(parentWidth: number, parentHeight: number): void {
+    resize(): void {
         //
     }
 }
