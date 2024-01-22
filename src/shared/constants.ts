@@ -1,0 +1,13 @@
+export const FILL_COLOR = 0xfafafa;
+export const COLOR_PRIMARY = 0x000000;
+export const COLOR_ON_PRIMARY = 0xfafafa;
+export const SPEAR_CIRCLE_RADIUS = 16;
+export const SPEAR_LINE_WIDTH = 2;
+export const SPEAR_LINE_LENGTH = 64;
+export const TARGET_CIRCLE_RADIUS = 72;
+export const TARGET_ROTATION_SPEED = 100; // Turns in a second
+export const DISPLAY_FONT_FAMILY = "TitilliumWeb";
+export const SCORE_FONT_SIZE = 50;
+export const MENU_FONT_SIZE = 40;
+export const SPEAR_SHOT_SPEED = 100;
+export const SHOTTABLE_SPEAR_Y_OFFSET = 300;
