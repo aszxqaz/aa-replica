@@ -11,3 +11,5 @@ export const SCORE_FONT_SIZE = 50;
 export const MENU_FONT_SIZE = 40;
 export const SPEAR_SHOT_SPEED = 100;
 export const SHOTTABLE_SPEAR_Y_OFFSET = 300;
+export const GAME_SCENE_BACKGROUND = 0xffffff;
+export const GAME_SCENE_GAME_OVER_TINT = 0xff0000;

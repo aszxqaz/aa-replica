@@ -1,4 +1,4 @@
-import { Application, ColorSource, DisplayObject } from "pixi.js";
+import { Application, DisplayObject } from "pixi.js";
 import { Stage, Layer } from "@pixi/layers";
 import { diffuseGroup, normalGroup, lightGroup } from "@pixi/lights";
 
@@ -66,10 +66,6 @@ export class SceneManager {
                 SceneManager.height
             );
         }
-    }
-
-    public static setBackground(color: ColorSource) {
-        SceneManager._app.renderer.background.color = color;
     }
 }
 
