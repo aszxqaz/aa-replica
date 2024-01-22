@@ -9,6 +9,7 @@ export class SceneManager {
     private static _currentScene: IScene;
 
     public static get width() {
+        return this._app.screen.width;
         return Math.max(
             document.documentElement.clientWidth,
             window.innerWidth || 0
@@ -16,6 +17,7 @@ export class SceneManager {
     }
 
     public static get height() {
+        return this._app.screen.height;
         return Math.max(
             document.documentElement.clientHeight,
             window.innerHeight || 0

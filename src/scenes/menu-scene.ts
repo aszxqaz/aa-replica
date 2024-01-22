@@ -11,12 +11,12 @@ export class MenuScene extends PIXI.Container implements IScene {
             SceneManager.changeScene(new GameScene());
         });
 
-        // playButton.position.set(
-        //     SceneManager.width / 2,
-        //     SceneManager.height / 2
-        // );
+        playButton.position.set(
+            SceneManager.width / 2,
+            SceneManager.height / 2
+        );
 
-        playButton.position.set(200, 200);
+        // playButton.position.set(200, 200);
 
         this.addChild(playButton);
     }
