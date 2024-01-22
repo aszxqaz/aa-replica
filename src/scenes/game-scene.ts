@@ -37,6 +37,7 @@ export class GameScene extends PIXI.Container implements IScene {
         this.addChild(this.background, this.target, this.score);
 
         this.background.eventMode = "static";
+        this.background.cursor = "pointer";
         this.background.on("pointerdown", this.shot.bind(this));
     }
 

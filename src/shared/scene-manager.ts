@@ -28,8 +28,8 @@ export class SceneManager {
         SceneManager._app = new Application({
             view: document.getElementById("pixi-screen") as HTMLCanvasElement,
             resizeTo: window,
-            resolution: window.devicePixelRatio || 1,
-            autoDensity: true,
+            // resolution: window.devicePixelRatio || 1,
+            // autoDensity: true,
             backgroundColor: background,
         });
 
