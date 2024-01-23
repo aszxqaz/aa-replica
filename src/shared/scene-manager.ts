@@ -25,6 +25,7 @@ export class SceneManager {
         SceneManager._app = new Application({
             view: document.getElementById("pixi-screen") as HTMLCanvasElement,
             resizeTo: window,
+            antialias: true,
             // ! When uncommented: got issues with resolution on mobile
             // resolution: window.devicePixelRatio || 1,
             // autoDensity: true,
