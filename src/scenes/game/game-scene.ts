@@ -20,14 +20,14 @@ class ScoreCounter {
     private current = 0;
     private listeners: ((cur: number, high: number) => void)[] = [];
 
-    constructor(private highscore: number = 0) {}
+    constructor(private _highscore: number = 0) {}
 
     increment() {
-        if (++this.current > this.highscore) {
-            this.highscore = this.current;
+        if (++this.current > this._highscore) {
+            this._highscore = this.current;
         }
         for (const listener of this.listeners) {
-            listener(this.current, this.highscore);
+            listener(this.current, this._highscore);
         }
     }
 
@@ -38,6 +38,10 @@ class ScoreCounter {
 
     get score() {
         return this.current;
+    }
+
+    get highscore() {
+        return this._highscore;
     }
 }
 
@@ -143,7 +147,9 @@ export class GameScene extends PIXI.Container implements Updatable {
         playButton.position.y = SceneManager.height - 90;
 
         playButton.on("pointerdown", () => {
-            SceneManager.changeScene(new GameScene(true, this.counter.score));
+            SceneManager.changeScene(
+                new GameScene(true, this.counter.highscore)
+            );
         });
 
         this.addChild(playButton);
