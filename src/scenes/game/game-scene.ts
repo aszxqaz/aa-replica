@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { Updatable, SceneManager } from "../../shared/scene-manager";
-import { Target, ScoreCircleLabel, Spear } from "../../containers";
+import { Target, Spear } from "../../containers";
 import { MenuButton } from "../../components/menu-button";
 import {
     GAME_SCENE_BACKGROUND,
