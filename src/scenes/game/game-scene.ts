@@ -91,7 +91,7 @@ export class GameScene extends PIXI.Container implements Updatable {
     private createGameHint(): GameHint {
         const gameHint = new GameHint("Tap to play");
         gameHint.position = {
-            x: SceneManager.width - gameHint.width,
+            x: Math.min(SceneManager.width - gameHint.width, 400),
             y: SceneManager.height - gameHint.height,
         };
         return gameHint;
