@@ -4,6 +4,7 @@ import {
     COLOR_ON_PRIMARY,
     COLOR_PRIMARY,
     MENU_FONT_SIZE,
+    MENU_BUTTON_HEIGHT,
 } from "../shared/constants";
 import { SceneManager } from "../shared/scene-manager";
 
@@ -13,10 +14,10 @@ export class MenuButton extends PIXI.Container {
         let width = Math.min(200, SceneManager.width * 0.8);
         const rect = new PIXI.Graphics()
             .beginFill(COLOR_PRIMARY)
-            .drawRoundedRect(0, 0, width, 80, 24)
+            .drawRoundedRect(0, 0, width, MENU_BUTTON_HEIGHT, 24)
             .endFill();
 
-        rect.pivot.set(width / 2, 80 / 2);
+        rect.pivot.set(width / 2, MENU_BUTTON_HEIGHT / 2);
 
         const text = new PIXI.Text(
             label,
