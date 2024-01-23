@@ -55,16 +55,6 @@ export class Spear extends PIXI.Container {
 
         this.addChild(this._circle, this.line);
 
-        // this.filters = [
-        //     new DropShadowFilter({
-        //         alpha: 0.2,
-        //         offset: {
-        //             x: 10,
-        //             y: 10,
-        //         },
-        //     }),
-        // ];
-
         this.pivot = {
             x: 0,
             y: -fromCenterToPeak,
