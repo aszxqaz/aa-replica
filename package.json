@@ -14,12 +14,9 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "@pixi/filter-drop-shadow": "^5.2.0",
     "@pixi/layers": "^2.1.0",
-    "@pixi/lights": "^4.1.0",
-    "@pixi/sound": "^5.2.2",
+    "bezier-easing": "^2.1.0",
     "pixi-filters": "^5.2.1",
-    "pixi.js": "^7.3.3",
-    "tweedle.js": "^2.1.0"
+    "pixi.js": "^7.3.3"
   }
 }

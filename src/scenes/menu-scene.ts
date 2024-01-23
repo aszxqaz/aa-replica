@@ -1,9 +1,9 @@
 import * as PIXI from "pixi.js";
-import { IScene, SceneManager } from "../shared/scene-manager";
+import { Updatable, SceneManager } from "../shared/scene-manager";
 import { MenuButton } from "../components/menu-button";
-import { GameScene } from "./game-scene";
+import { GameScene } from "./game/game-scene";
 
-export class MenuScene extends PIXI.Container implements IScene {
+export class MenuScene extends PIXI.Container implements Updatable {
     constructor() {
         super();
         const playButton = new MenuButton("Play");

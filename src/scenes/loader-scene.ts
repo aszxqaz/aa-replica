@@ -1,10 +1,10 @@
 import { Container, Assets } from "pixi.js";
 import { LoadingBarContainer } from "../containers/loading-bar-container";
-import { SceneManager, IScene } from "../shared/scene-manager";
+import { SceneManager, Updatable } from "../shared/scene-manager";
 import { manifest } from "../shared/manifest";
 import { MenuScene } from "./menu-scene";
 
-export class LoaderScene extends Container implements IScene {
+export class LoaderScene extends Container implements Updatable {
     private _loadingBar: LoadingBarContainer;
 
     constructor() {

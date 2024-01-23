@@ -5,6 +5,7 @@ import {
     SPEAR_CIRCLE_RADIUS,
     SPEAR_LINE_LENGTH,
     SPEAR_LINE_WIDTH,
+    SPEAR_SHOT_RESISTANCE,
     SPEAR_SHOT_SPEED,
     TARGET_CIRCLE_RADIUS,
 } from "../shared/constants";
@@ -20,6 +21,7 @@ export class Spear extends PIXI.Container {
     private _circle: PIXI.Graphics;
     private line: PIXI.Graphics;
     private target: Target;
+    private shotTimestamp?: number;
 
     private _active = false;
     private _onCollision?: OnSpearCollisionCallback;
@@ -71,12 +73,18 @@ export class Spear extends PIXI.Container {
 
     shot(onCollision?: OnSpearCollisionCallback) {
         this._active = true;
+        this.shotTimestamp = Date.now();
         this._onCollision = onCollision;
     }
 
     update(dt: number) {
         if (this._active) {
-            const dY = (SPEAR_SHOT_SPEED * dt) / 5;
+            const diffT = Date.now() - this.shotTimestamp!;
+
+            const dY =
+                (SPEAR_SHOT_SPEED * dt -
+                    (diffT * SPEAR_SHOT_RESISTANCE) / 1000) /
+                5;
             console.log(dY);
             this.position.set(this.x, this.y - dY);
 
