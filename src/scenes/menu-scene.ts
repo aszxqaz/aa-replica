@@ -16,14 +16,8 @@ export class MenuScene extends PIXI.Container implements Updatable {
             SceneManager.height / 2
         );
 
-        // playButton.position.set(200, 200);
-
         this.addChild(playButton);
     }
 
     update(): void {}
-
-    resize(): void {
-        //
-    }
 }

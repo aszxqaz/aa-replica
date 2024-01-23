@@ -36,7 +36,7 @@ export class Spear extends PIXI.Container {
         return spear;
     }
 
-    private constructor(target: Target) {
+    constructor(target: Target) {
         super();
 
         this.target = target;
@@ -106,7 +106,7 @@ export class Spear extends PIXI.Container {
             this.position,
             new PIXI.Point(
                 this.position.x,
-                this.position.y - SPEAR_LINE_LENGTH
+                this.position.y + SPEAR_LINE_LENGTH
             ),
             other.circlePosition,
             SPEAR_CIRCLE_RADIUS

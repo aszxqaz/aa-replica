@@ -26,7 +26,6 @@ export class LoaderScene extends Container implements Updatable {
     async initLoader(): Promise<void> {
         await Assets.init({ manifest: manifest });
         const bundlesIds = manifest.bundles.map((bundle) => bundle.name);
-        // await Assets.loadBundle("fonts");
         await Assets.loadBundle(bundlesIds, this.downloadProgress.bind(this));
     }
 
