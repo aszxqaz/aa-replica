@@ -6,13 +6,15 @@ import {
 } from "../shared/constants";
 import { Spear } from "./spear";
 import { EasingAnimation, easings } from "../shared/animation";
+import { ScoreCircleLabel } from "./score";
 
 const TURN_RAD = Math.PI * 2;
 
 export class Target extends PIXI.Container {
     public spears: Spear[] = [];
-
+    private score: ScoreCircleLabel;
     private circle: PIXI.Graphics;
+    private rotator: PIXI.Container;
     private _radius: number;
     private upAnimation?: EasingAnimation;
     private downAnimation?: EasingAnimation;
@@ -24,10 +26,11 @@ export class Target extends PIXI.Container {
             .drawCircle(0, 0, TARGET_CIRCLE_RADIUS)
             .endFill();
 
-        // this.circle.filters = [new DropShadowFilter({})];
+        this.score = new ScoreCircleLabel(this);
+        this.rotator = new PIXI.Container();
 
         this._radius = TARGET_CIRCLE_RADIUS;
-        this.addChild(this.circle);
+        this.addChild(this.circle, this.rotator, this.score);
     }
 
     public get radius(): number {
@@ -36,20 +39,26 @@ export class Target extends PIXI.Container {
 
     private setCircleScale(scale: number) {
         this.circle.scale.set(scale, scale);
+        this.score.scale.set(scale, scale);
     }
 
     update(dt: number) {
-        this.rotation += (TURN_RAD * TARGET_ROTATION_SPEED * dt) / 15000;
-        this.rotation %= TURN_RAD;
+        this.rotator.rotation +=
+            (TURN_RAD * TARGET_ROTATION_SPEED * dt) / 15000;
+        this.rotator.rotation %= TURN_RAD;
         this.upAnimation?.update();
         this.downAnimation?.update();
     }
 
+    setScore(score: number) {
+        this.score.setScore(score);
+    }
+
     attach(spear: Spear) {
-        this.addChild(spear);
+        this.rotator.addChild(spear);
         this.spears.push(spear);
-        spear.rotation = -this.rotation;
-        spear.x = Math.sin(this.rotation) * TARGET_CIRCLE_RADIUS;
+        spear.rotation = -this.rotator.rotation;
+        spear.x = Math.sin(this.rotator.rotation) * TARGET_CIRCLE_RADIUS;
         spear.y = Math.cos(spear.rotation) * TARGET_CIRCLE_RADIUS;
 
         this.upAnimation = this.createScaleAnimation();

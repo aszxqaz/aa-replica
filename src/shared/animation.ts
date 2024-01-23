@@ -55,8 +55,6 @@ export class EasingAnimation {
             (this.to! - this.from!) *
                 (this.easing ? this.easing(input) : input);
 
-        console.log(input);
-
         this.callback(value);
 
         if (input >= 1) {

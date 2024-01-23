@@ -6,9 +6,7 @@ import {
     SCORE_FONT_SIZE,
 } from "../shared/constants";
 
-export class Score extends PIXI.Text {
-    private score = 0;
-
+export class ScoreCircleLabel extends PIXI.Text {
     constructor(target: Target) {
         super(
             "0",
@@ -22,8 +20,7 @@ export class Score extends PIXI.Text {
         this.position = target.position;
     }
 
-    increment(): void {
-        this.score++;
-        this.text = this.score.toString();
+    setScore(score: number): void {
+        this.text = score.toString();
     }
 }

@@ -75,7 +75,6 @@ export class Spear extends PIXI.Container {
                 (SPEAR_SHOT_SPEED * dt -
                     (diffT * SPEAR_SHOT_RESISTANCE) / 1000) /
                 5;
-            console.log(dY);
             this.position.set(this.x, this.y - dY);
 
             for (const spear of this.target.spears) {

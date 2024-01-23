@@ -50,8 +50,6 @@ export class GameHint extends PIXI.Container {
                 ? this.hintCircleRadius * 1.5
                 : 0;
 
-            console.log(x, ",", y);
-
             const circle = new GameHintCircle(x, y, this.hintCircleRadius);
             circles.push(circle);
         }
